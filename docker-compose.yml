@@ -1,0 +1,75 @@
+# ============================================
+# DashDex - Docker Compose Configuration
+# ============================================
+# Usage:
+#   Development (hot-reload):
+#     docker compose up dev
+#     docker compose up -d dev    # Detached mode
+#
+#   Production (static build):
+#     docker compose up prod
+#     docker compose up -d prod   # Detached mode
+#
+#   Stop:
+#     docker compose down
+#
+#   View logs:
+#     docker compose logs -f dev
+# ============================================
+
+services:
+  # ============================================
+  # Development Service - Hot Reload with Vite
+  # ============================================
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: dashdex-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount source code for hot-reload
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./index.html:/app/index.html
+      - ./vite.config.ts:/app/vite.config.ts
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./tsconfig.app.json:/app/tsconfig.app.json
+      - ./tsconfig.node.json:/app/tsconfig.node.json
+      - ./package.json:/app/package.json
+      # Preserve node_modules inside container (don't override with host)
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true  # Enable file polling for Docker on Windows
+      - WATCHPACK_POLLING=true    # Enable polling for webpack/vite file watching
+    restart: unless-stopped
+    networks:
+      - dashdex-network
+
+  # ============================================
+  # Production Service - Static Build with Nginx
+  # ============================================
+  prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: dashdex-prod
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:80/"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    networks:
+      - dashdex-network
+
+networks:
+  dashdex-network:
+    driver: bridge
