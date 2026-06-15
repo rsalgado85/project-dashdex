@@ -56,6 +56,7 @@ export const ROUTES = {
   ABOUT: '/about',
   VIDEOGAMES: '/videogames',
   HISTORY: '/history',
+  DONATE: '/donate',
 } as const;
 
 export const NAV_ITEMS = [
@@ -68,5 +69,6 @@ export const NAV_ITEMS = [
   { label: 'Favorites', path: ROUTES.FAVORITES, icon: 'Heart' },
   { label: 'Videogames', path: ROUTES.VIDEOGAMES, icon: 'Gamepad2' },
   { label: 'History', path: ROUTES.HISTORY, icon: 'BookOpen' },
+  { label: 'Donate', path: ROUTES.DONATE, icon: 'Heart' },
   { label: 'About', path: ROUTES.ABOUT, icon: 'User' },
 ] as const;

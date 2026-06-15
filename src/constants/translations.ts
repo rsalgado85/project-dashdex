@@ -15,6 +15,7 @@ export const translations = {
     'nav.about': 'About',
     'nav.videogames': 'Videogames',
     'nav.history': 'History',
+    'nav.donate': 'Donate',
 
     // Common
     'common.loading': 'Loading Pokémon data...',
@@ -244,6 +245,13 @@ export const translations = {
     'about.quote': 'Technology leadership is not about knowing all the answers, but about building teams that can find them together.',
     'about.quoteAuthor': '— Robinson Salgado',
 
+    // Donate
+    'donate.title': 'Support DashDex',
+    'donate.desc': 'If you find DashDex useful, consider supporting its development with a donation.',
+    'donate.chooseAmount': 'Choose amount',
+    'donate.paypalButton': 'Donate with PayPal',
+    'donate.redirectNote': 'You will be redirected to PayPal to complete your donation.',
+
     // Language
     'lang.en': 'English',
     'lang.es': 'Español',
@@ -260,6 +268,7 @@ export const translations = {
     'nav.about': 'Acerca de',
     'nav.videogames': 'Videojuegos',
     'nav.history': 'Historia',
+    'nav.donate': 'Donar',
 
     // Common
     'common.loading': 'Cargando datos Pokémon...',
@@ -488,6 +497,13 @@ export const translations = {
     'about.tl6': 'Digital Solution Developer en Kantar Health Spain',
     'about.quote': 'El liderazgo tecnológico no se trata de tener todas las respuestas, sino de construir equipos que puedan encontrarlas juntos.',
     'about.quoteAuthor': '— Robinson Salgado',
+
+    // Donate
+    'donate.title': 'Apoya DashDex',
+    'donate.desc': 'Si encuentras útil DashDex, considera apoyar su desarrollo con una donación.',
+    'donate.chooseAmount': 'Elige un monto',
+    'donate.paypalButton': 'Donar con PayPal',
+    'donate.redirectNote': 'Serás redirigido a PayPal para completar tu donación.',
 
     // Language
     'lang.en': 'English',

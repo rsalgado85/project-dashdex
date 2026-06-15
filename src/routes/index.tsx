@@ -11,6 +11,7 @@ import { FavoritesPage } from '@/pages/FavoritesPage';
 import { AboutPage } from '@/pages/AboutPage';
 import { VideogamesPage } from '@/pages/VideogamesPage';
 import { HistoryPage } from '@/pages/HistoryPage';
+import { DonatePage } from '@/pages/DonatePage';
 import { ErrorPage } from '@/components/common/ErrorPage';
 
 export const router = createBrowserRouter([
@@ -31,6 +32,7 @@ export const router = createBrowserRouter([
       { path: 'about', element: <AboutPage /> },
       { path: 'videogames', element: <VideogamesPage /> },
       { path: 'history', element: <HistoryPage /> },
+      { path: 'donate', element: <DonatePage /> },
     ],
   },
 ]);
