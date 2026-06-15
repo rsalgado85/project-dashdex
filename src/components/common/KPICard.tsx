@@ -18,13 +18,18 @@ export function KPICard({ label, value, icon: Icon, subtitle, trend, trendValue,
   return (
     <motion.button
       onClick={onClick}
-      className="kpi-card text-left w-full cursor-pointer group"
+      className="kpi-card text-left w-full cursor-pointer group relative overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.3 }}
       aria-label={`${label}: ${value}`}
     >
+      {pokemonId && (
+        <div className="absolute top-2 right-2 z-10 hidden sm:block">
+          <GenerationBadge pokemonId={pokemonId} size="sm" />
+        </div>
+      )}
       <div className="flex items-center justify-between">
         <span className="kpi-label">{label}</span>
         <div className="p-2 rounded-lg bg-accent/10 text-accent-light group-hover:bg-accent/20 transition-colors">
@@ -40,10 +45,7 @@ export function KPICard({ label, value, icon: Icon, subtitle, trend, trendValue,
             loading="lazy"
           />
         )}
-        <span className="kpi-value">{value}</span>
-        {pokemonId && (
-          <GenerationBadge pokemonId={pokemonId} size="sm" />
-        )}
+        <span className="kpi-value truncate">{value}</span>
       </div>
       {subtitle && (
         <span className="text-xs text-text-secondary">{subtitle}</span>
