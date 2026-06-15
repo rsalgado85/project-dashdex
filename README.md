@@ -122,6 +122,10 @@ docker run -d -p 3000:80 --name dashdex dashdex
 
 ## ▲ Vercel Deployment
 
+### Live URL
+
+**[https://dashdex-593.vercel.app](https://dashdex-593.vercel.app)**
+
 ### Automatic (Recommended)
 
 1. Push your code to a GitHub repository
