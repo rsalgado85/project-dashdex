@@ -11,7 +11,7 @@
  * - Supports search, filtering by platform, and detail views
  */
 
-const RAWG_API_KEY = '7165978ebad441cf957bc59544ada7df';
+const RAWG_API_KEY = import.meta.env.VITE_RAWG_API_KEY as string;
 const RAWG_BASE_URL = 'https://api.rawg.io/api';
 
 export interface RawgGame {
