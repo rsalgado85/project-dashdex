@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dashdex-593.vercel.app/sitemap.xml
