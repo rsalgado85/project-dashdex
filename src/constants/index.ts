@@ -69,6 +69,6 @@ export const NAV_ITEMS = [
   { label: 'Favorites', path: ROUTES.FAVORITES, icon: 'Heart' },
   { label: 'Videogames', path: ROUTES.VIDEOGAMES, icon: 'Gamepad2' },
   { label: 'History', path: ROUTES.HISTORY, icon: 'BookOpen' },
-  { label: 'Donate', path: ROUTES.DONATE, icon: 'Heart' },
+  { label: 'Donate', path: ROUTES.DONATE, icon: 'Coins' },
   { label: 'About', path: ROUTES.ABOUT, icon: 'User' },
 ] as const;

@@ -53,10 +53,10 @@ export function DonatePage() {
                   setSelectedPreset(amt);
                   setIsCustomActive(false);
                 }}
-                className={`flex items-center justify-center rounded-lg border px-3 py-3 text-sm font-medium transition-all ${
+                className={`flex items-center justify-center rounded-lg border-2 px-3 py-3 text-sm font-semibold transition-all ${
                   selectedPreset === amt && !isCustomActive
-                    ? "border-primary bg-primary text-primary-foreground shadow-sm"
-                    : "border-border hover:border-primary/40 hover:bg-muted"
+                    ? "border-primary bg-primary text-primary-foreground shadow-md scale-105"
+                    : "border-border bg-card hover:border-primary/60 hover:bg-muted hover:text-foreground text-muted-foreground"
                 }`}
               >
                 ${amt}
@@ -77,10 +77,10 @@ export function DonatePage() {
                   setIsCustomActive(true);
                 }}
                 onFocus={() => setIsCustomActive(true)}
-                className={`w-full rounded-lg border bg-transparent py-3 pl-7 pr-1.5 text-sm font-medium outline-none transition-all text-center ${
+                className={`w-full rounded-lg border-2 bg-transparent py-3 pl-7 pr-1.5 text-sm font-semibold outline-none transition-all text-center ${
                   isCustomActive
-                    ? "border-primary ring-2 ring-primary/20"
-                    : "border-border hover:border-primary/40"
+                    ? "border-primary ring-2 ring-primary/20 bg-card"
+                    : "border-border hover:border-primary/40 text-muted-foreground"
                 }`}
               />
             </div>

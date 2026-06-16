@@ -24,6 +24,7 @@ import {
   Gamepad2,
   BookOpen,
   User,
+  Coins,
   Sun,
   Moon,
   Languages,
@@ -45,6 +46,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   Gamepad2,
   BookOpen,
   User,
+  Coins,
 };
 
 export function Sidebar() {
